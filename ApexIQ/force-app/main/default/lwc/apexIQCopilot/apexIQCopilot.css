@@ -4,7 +4,7 @@
 
     align-items:center;
 
-    gap:18px;
+    justify-content:space-between;
 
     padding:24px;
 
@@ -16,24 +16,120 @@
 
 }
 
-h1{
+.title{
 
-    font-size:28px;
+    flex:1;
 
-    font-weight:700;
-
-    color:#0176D3;
-
-    margin:0;
+    margin-left:20px;
 
 }
 
-p{
+h1{
+
+    margin:0;
+
+    color:#0176D3;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+.title p{
+
+    margin-top:5px;
 
     color:#706E6B;
 
-    font-size:15px;
+}
 
-    margin-top:6px;
+.welcome{
+
+    padding:24px;
+
+    border-top:1px solid #E5E5E5;
+
+}
+
+.welcome h2{
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+}
+
+.welcome p{
+
+    font-size:16px;
+
+    color:#444;
+
+    margin-bottom:12px;
+
+}
+
+.quick-actions{
+
+    padding:24px;
+
+    border-top:1px solid #E5E5E5;
+
+}
+
+.action-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:20px;
+
+}
+
+.action-card{
+
+    background:white;
+
+    border:1px solid #D8DDE6;
+
+    border-radius:12px;
+
+    padding:22px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:0.25s;
+
+}
+
+.action-card:hover{
+
+    background:#F3F9FF;
+
+    border-color:#0176D3;
+
+    transform:translateY(-2px);
+
+}
+
+.emoji{
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+.action-card h3{
+
+    margin:0;
+
+    font-size:18px;
 
 }
