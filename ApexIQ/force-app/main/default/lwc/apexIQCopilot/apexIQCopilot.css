@@ -1,0 +1,39 @@
+.header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:24px;
+
+}
+
+.logo{
+
+    font-size:48px;
+
+}
+
+h1{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#0176D3;
+
+    margin:0;
+
+}
+
+p{
+
+    color:#706E6B;
+
+    font-size:15px;
+
+    margin-top:6px;
+
+}
