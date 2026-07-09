@@ -1,3 +1,31 @@
 <template>
-    
+
+    <lightning-card title="Ask ApexIQ">
+
+        <div class="slds-p-around_medium">
+
+            <lightning-textarea
+                label="Prompt"
+                value={prompt}
+                onchange={handleChange}>
+            </lightning-textarea>
+
+            <br/>
+
+            <lightning-button
+                label="Ask Gemini"
+                variant="brand"
+                onclick={askGemini}>
+            </lightning-button>
+
+            <br/><br/>
+
+            <lightning-formatted-text
+                value={response}>
+            </lightning-formatted-text>
+
+        </div>
+
+    </lightning-card>
+
 </template>
