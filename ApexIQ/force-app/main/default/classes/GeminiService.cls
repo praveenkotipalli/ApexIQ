@@ -1,9 +1,9 @@
 public with sharing class GeminiService {
 
-    public static String askGemini(String prompt) {
+    public static AIResponse askGemini(String prompt) {
 
-        // Read API Key from Custom Metadata
-        Gemini_Config__mdt config = Gemini_Config__mdt.getInstance('Default');
+        Gemini_Config__mdt config =
+            Gemini_Config__mdt.getInstance('Default');
 
         String apiKey = config.API_Key__c;
 
@@ -18,22 +18,24 @@ public with sharing class GeminiService {
         req.setMethod('POST');
         req.setHeader('Content-Type', 'application/json');
 
-        String body = JSON.serialize(new Map<String, Object>{
-            'contents' => new List<Object>{
-                new Map<String, Object>{
-                    'parts' => new List<Object>{
-                        new Map<String, Object>{
-                            'text' => prompt
+        String body = JSON.serialize(
+            new Map<String, Object>{
+                'contents' => new List<Object>{
+                    new Map<String, Object>{
+                        'parts' => new List<Object>{
+                            new Map<String, Object>{
+                                'text' => prompt
+                            }
                         }
                     }
                 }
             }
-        });
+        );
 
         req.setBody(body);
 
         HttpResponse res = http.send(req);
 
-        return res.getBody();
+        return GeminiResponseParser.parse(res.getBody());
     }
 }
