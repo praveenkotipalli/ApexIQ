@@ -20,7 +20,7 @@ export default class ApexIQChat extends LightningElement {
                 prompt: this.prompt
             });
 
-            this.response = result;
+            this.response = result.message;
 
         } catch (error) {
 
