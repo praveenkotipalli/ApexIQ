@@ -5,4 +5,24 @@ public with sharing class GeminiController {
         return GeminiService.askGemini(prompt);
     }
 
+    @AuraEnabled
+public static AIResponse analyzeOpportunity(Id opportunityId) {
+
+    Opportunity opp = [
+        SELECT
+            Name,
+            StageName,
+            Amount,
+            Description,
+            Account.Name
+        FROM Opportunity
+        WHERE Id = :opportunityId
+        LIMIT 1
+    ];
+
+    String prompt = OpportunityPromptBuilder.build(opp);
+
+    return GeminiService.askGemini(prompt);
+}
+
 }
